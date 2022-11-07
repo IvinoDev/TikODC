@@ -76,7 +76,7 @@ class _HomeState extends State<Home> {
                 })
               },
               child: Text(
-                "Abonnements",
+                "Suivis",
                 style: Theme.of(context)
                   .textTheme
                   .bodyText1!

@@ -1,227 +1,204 @@
 import 'package:flutter/material.dart';
+import 'package:tikodc/util/profiletab_1.dart';
+import 'package:tikodc/util/profiletab_2.dart';
+import 'package:tikodc/util/profiletab_3.dart';
 
-class Profil extends StatefulWidget {
+class Profil extends StatelessWidget {
   const Profil({Key? key}) : super(key: key);
-
-  @override
-  State<Profil> createState() => _ProfilState();
-}
-
-class _ProfilState extends State<Profil> {
-  final scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      key: scaffoldKey,
-      backgroundColor: Colors.white,
-      appBar: AppBar(
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('IvinoDev', style: TextStyle(color: Colors.black)),
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          leading: Icon(Icons.person_add, color: Colors.black),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(right: 12.0),
+              child: Icon(
+                Icons.menu,
+                color: Colors.black,
+              ),
+            )
+          ],
+        ),
         backgroundColor: Colors.white,
-        automaticallyImplyLeading: false,
-        leading: InkWell(
-          onTap: () async {},
-          child: Icon(
-            Icons.person_add_alt_1_outlined,
-            color: Colors.black,
-            size: 24,
-          ),
-        ),
-        title: Align(
-          alignment: AlignmentDirectional(0, 0),
-          child: Text(
-            'Ivinodev',
-            style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                  color: Colors.black,
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                ),
-          ),
-        ),
-        actions: [
-          Icon(
-            Icons.list,
-            color: Colors.black,
-            size: 24,
-          ),
-        ],
-        centerTitle: false,
-        elevation: 0,
-      ),
-      body: SafeArea(
-        child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+        body: Column(
+          children: [
+            Container(
+              child: const CircleAvatar(
+                radius: 25,
+                backgroundImage: AssetImage('assets/images/me.jpg'),
+              ),
+            // profile photo
+              height: 120,
+              width: 120,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.grey[200],
+              ),
+            ),
+
+            // username
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Text(
+                '@ivinoDev',
+                style: TextStyle(color: Colors.black, fontSize: 20),
+              ),
+            ),
+
+            // number of following, followers, likes
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Align(
-                  alignment: AlignmentDirectional(0, 0),
-                  child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 18, 0, 0),
-                    child: Container(
-                      width: 120,
-                      height: 120,
-                      clipBehavior: Clip.antiAlias,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                      ),
-                      child: Image.network(
-                        'https://picsum.photos/seed/948/600',
-                        fit: BoxFit.fitWidth,
-                      ),
-                    ),
-                  ),
-                ),
-                Align(
-                  alignment: AlignmentDirectional(-0.05, 0),
-                  child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 18, 0, 18),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
+                Expanded(
+                  child: Container(
+                    alignment: Alignment.centerRight,
+                    child: Column(
                       children: [
-                        SelectionArea(
-                            child: Text(
-                          '@ivinodev',
-                          style:
-                              Theme.of(context).textTheme.bodyText1!.copyWith(
-                                    color: Colors.black,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                        )),
-                        Icon(
-                          Icons.qr_code,
-                          color: Colors.black,
-                          size: 24,
+                        Text(
+                          '37',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 24),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          'Following',
+                          style: TextStyle(color: Colors.grey, fontSize: 15),
                         ),
                       ],
                     ),
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 18),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          SelectionArea(
-                              child: Text(
-                            '209',
-                            style:
-                                Theme.of(context).textTheme.bodyText1!.copyWith(
-                                      color: Colors.black,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                          )),
-                          SelectionArea(
-                              child: Text(
-                            'Abonnement',
-                            style:
-                                Theme.of(context).textTheme.bodyText1!.copyWith(
-                                      color: Colors.black,
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.normal,
-                                    ),
-                          )),
-                        ],
-                      ),
-                      Container(
-                        width: 1,
-                        height: 25,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFCDCECE),
+                Expanded(
+                  child: Container(
+                    child: Column(
+                      children: [
+                        Text(
+                          '8',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 24),
                         ),
-                      ),
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          SelectionArea(
-                              child: Text(
-                            '209',
-                            style:
-                                Theme.of(context).textTheme.bodyText1!.copyWith(
-                                      color: Colors.black,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                          )),
-                          SelectionArea(
-                              child: Text(
-                            'Abonnes',
-                            style:
-                                Theme.of(context).textTheme.bodyText1!.copyWith(
-                                      color: Colors.black,
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.normal,
-                                    ),
-                          )),
-                        ],
-                      ),
-                      Container(
-                        width: 1,
-                        height: 25,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFCDCECE),
+                        SizedBox(
+                          height: 5,
                         ),
-                      ),
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          SelectionArea(
-                              child: Text(
-                            '7521',
-                            style:
-                                Theme.of(context).textTheme.bodyText1!.copyWith(
-                                      color: Colors.black,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                          )),
-                          SelectionArea(
-                              child: Text(
-                            'J\'aime',
-                            style:
-                                Theme.of(context).textTheme.bodyText1!.copyWith(
-                                      color: Colors.black,
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.normal,
-                                    ),
-                          )),
-                        ],
-                      ),
-                    ],
+                        Text(
+                          'Followers',
+                          style: TextStyle(color: Colors.grey, fontSize: 15),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
-                      child: OutlinedButton(
-                        onPressed: () {
-                          print('Button pressed ...');
-                        },
-                        child: Text(
-                          'Se deconnecter',
-                          style:
-                              Theme.of(context).textTheme.bodyText1!.copyWith(
-                                    color: Colors.black,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                Expanded(
+                  child: Container(
+                    alignment: Alignment.centerLeft,
+                    child: Column(
+                      children: [
+                        Text(
+                          '56',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 24),
                         ),
-                      ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          '  Likes  ',
+                          style: TextStyle(color: Colors.grey, fontSize: 15),
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
               ],
             ),
-          ),
+
+            SizedBox(height: 15),
+
+            // buttons -> edit profile, insta links, bookmark
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  padding: EdgeInsets.symmetric(vertical: 15, horizontal: 40),
+                  child: Text('Modifier profil',
+                      style: TextStyle(color: Colors.black, fontSize: 20)),
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey.shade300),
+                      borderRadius: BorderRadius.circular(5)),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                  child: Container(
+                    padding: EdgeInsets.all(15),
+                    child: Icon(
+                      Icons.camera_alt,
+                      color: Colors.grey[800],
+                    ),
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.grey.shade300),
+                        borderRadius: BorderRadius.circular(5)),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.all(15),
+                  child: Icon(
+                    Icons.bookmark_border,
+                    color: Colors.grey[800],
+                  ),
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey.shade300),
+                      borderRadius: BorderRadius.circular(5)),
+                ),
+              ],
+            ),
+            SizedBox(height: 15),
+
+            // bio
+            Text(
+              'Passionée de programmation et apprenante à ODK',
+              style: TextStyle(color: Colors.grey[700]),
+            ),
+
+            // default tab controller
+
+            TabBar(
+              tabs: [
+                Tab(
+                  icon: Icon(Icons.grid_3x3, color: Colors.black),
+                ),
+                Tab(
+                  icon: Icon(Icons.favorite, color: Colors.black),
+                ),
+                Tab(
+                  icon: Icon(Icons.lock_outline_rounded, color: Colors.black),
+                ),
+              ],
+            ),
+
+            Expanded(
+              child: TabBarView(
+                children: [
+                  FirstTab(),
+                  SecondTab(),
+                  ThirdTab(),
+                ],
+              ),
+            )
+          ],
         ),
       ),
     );

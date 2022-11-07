@@ -55,7 +55,7 @@ final List<Video> videos = [
       '465'),
   Video('jade13tr.mp4',
          user5,
-        'feeling the vibe (credits: @jade13tr) #cats #catsdoingthings',
+        'feeling the vibe #cats #catsdoingthings',
         'ltsyameme - original sound',
         '2.93K',
         '79',
