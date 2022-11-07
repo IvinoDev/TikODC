@@ -133,13 +133,16 @@ class _HomeState extends State<Home> {
                   flex: 3,
                   child: Container(
                     height: MediaQuery.of(context).size.height / 4,
-                    child: VideoDetail(video: videos[index],),
+                    child: VideoDetail(
+                      video: videos[chaine.elementAt(index)],),
                   ),
                 ),
                 Expanded(
                   child: Container(
                     height: MediaQuery.of(context).size.height / 2,
-                    child: HomeSideBar(video: videos[index],),
+                    child: HomeSideBar(
+                            video: videos[chaine.elementAt(index)],
+                          ),
                   ),
                 ),
               ],
