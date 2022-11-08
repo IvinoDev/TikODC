@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:tikodc/models/video.dart';
 import 'package:video_player/video_player.dart';
+import 'package:wakelock/wakelock.dart';
 
 class VideoTile extends StatefulWidget {
   const VideoTile(
@@ -52,6 +53,7 @@ class _VideoTileState extends State<VideoTile> {
     (widget.snappedPageIndex == widget.currentIndex && _isVideoPlaying)
         ? _videoController.play()
         : _videoController.pause();
+        _isVideoPlaying ? Wakelock.enable() : Wakelock.disable();
     return Container(
       color: Colors.black,
       child: FutureBuilder(
@@ -82,7 +84,7 @@ class _VideoTileState extends State<VideoTile> {
             return Container(
               alignment: Alignment.center,
               child: Lottie.asset('assets/loadingvideo.json',
-                  width: 50, height: 50, fit: BoxFit.cover),
+                  width: 70, height: 70, fit: BoxFit.cover),
             );
           }
         },

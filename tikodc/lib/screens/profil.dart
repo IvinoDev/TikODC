@@ -61,7 +61,7 @@ class Profil extends StatelessWidget {
                     child: Column(
                       children: [
                         Text(
-                          '37',
+                          '45',
                           style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
@@ -83,7 +83,7 @@ class Profil extends StatelessWidget {
                     child: Column(
                       children: [
                         Text(
-                          '8',
+                          '7',
                           style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
@@ -106,7 +106,7 @@ class Profil extends StatelessWidget {
                     child: Column(
                       children: [
                         Text(
-                          '56',
+                          '75',
                           style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.bold,

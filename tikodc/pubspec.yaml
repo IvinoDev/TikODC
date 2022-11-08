@@ -39,6 +39,13 @@ dependencies:
   flutter_launcher_icons: ^0.10.0
   font_awesome_flutter: ^10.2.1
   flutter_native_splash: ^2.2.13
+  intl_phone_number_input: ^0.7.1
+  country_phone_code_picker: ^0.0.41
+  wakelock: ^0.6.2
+  firebase_auth: ^4.1.1
+  firebase_core: ^2.1.1
+  fluttertoast: ^8.1.1
+  ndialog: ^4.2.0
   expandable_text: ^2.3.0
   marquee: ^2.2.3
   lottie: ^1.4.3
